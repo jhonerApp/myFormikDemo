@@ -11,7 +11,7 @@ import * as Yup from "yup";
 import TextError from "./TextError";
 
 const initialValues = {
-  name: "jhonnel",
+  name: "",
   email: "",
   channel: "",
   comments: "",
@@ -44,6 +44,9 @@ const onSubmit = (values, onSubmitProps) => {
   console.log("Form data", values);
   console.log("onSubmitProps data", onSubmitProps);
   onSubmitProps.setSubmitting(false);
+
+  //Reset forms
+  onSubmitProps.resetForm();
 };
 
 const validateComments = (value) => {
@@ -223,11 +226,12 @@ function YoutubeForm() {
               Visit fields
             </button> */}
             <button
-              type="Submit"
+              type="button"
               onClick={() => setFormValues(savedValuesValues)}
             >
               Load saved data
             </button>
+            <button type="reset">Reset</button>
             <button
               type="Submit"
               disabled={!formik.isValid || formik.isSubmitting}
