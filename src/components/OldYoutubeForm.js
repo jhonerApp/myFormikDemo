@@ -31,7 +31,6 @@ const validate = values => {
     //     errors.email = 'Invalid email format'
     // }
 
-
     // if (!values.channel) {
     //     errors.channel = 'Required'
     // }
