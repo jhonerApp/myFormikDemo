@@ -12,6 +12,7 @@ function DatePicker(props) {
       <label htmlFor={name}>{label}</label>
       <Field name={name}>
         {({ form, field }) => {
+          console.log("Date picker",form);
           const { setFieldValue } = form;
           const { value } = field;
           return (
